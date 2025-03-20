@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact & Rating</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Front Page with Photo -->
+  <section id="front-page" class="section">
+    <div class="container">
+      <img src="https://iili.io/3xBzWwF.md.jpg" alt="Front Page Photo" class="front-photo">
+    </div>
+  </section>
+
+  <!-- About Me Section (Half Photo, Half Text) -->
+  <section id="about" class="section">
+    <div class="container split-section">
+      <div class="half">
+        <img src="https://iili.io/3xBAxVe.md.jpg" alt="About Me Photo" class="about-photo">
+      </div>
+      <div class="half">
+        <h2>About Me</h2>
+        <p>Hello! I'm [Krishna Joshi], a passionate [data analyst/editor] with a love for [Gaming]. I enjoy creating things and solving problems. I have experience in [Your Skills] and am always eager to learn more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section">
+    <div class="container">
+      <h2>Resume</h2>
+      <img src="https://iili.io/3xBYmCP.md.jpg" alt="Resume Photo" class="resume-photo">
+    </div>
+  </section>
+
+  <!-- Contact & Rating Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact & Rating</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:bamanheda7kj@gmail.com">bamanheda7kj@gmail.com</a></p>
+      </div>
+      <div class="rating-section">
+        <h3>Rate My Website</h3>
+        <div class="star-rating">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p class="rating-text">Your rating: <span id="selected-rating">0</span> stars</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 [Krishna Joshi]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Star Rating -->
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingText = document.getElementById('selected-rating');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = star.getAttribute('data-value');
+        ratingText.textContent = value;
+
+        // Highlight selected stars
+        stars.forEach(s => {
+          if (s.getAttribute('data-value') <= value) {
+            s.classList.add('selected');
+          } else {
+            s.classList.remove('selected');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
